@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Heartline Dynamics LTD | Real Estate, Construction & Finance</title>
+    <meta name="description" content="Heartline Dynamics LTD: Delivering exceptional excellence in Real Estate Development, Affordable Housing, Construction, and Agricultural investments in Nigeria (Lagos, Abuja, Kano).">
+    <meta name="keywords" content="Real Estate Nigeria, Mshel Homes, Abuja Housing, Lagos Land, Construction Company, Property Investment, Heartline Dynamics">
+    <meta name="author" content="Heartline Dynamics LTD">
+    <link rel="canonical" href="https://heartlinedynamics.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heartlinedynamics.com/">
+    <meta property="og:title" content="Heartline Dynamics LTD - Premium Real Estate Solutions">
+    <meta property="og:description" content="Secure affordable housing, mortgage support, and premium real estate investments in Abuja and Lagos.">
+    <meta property="og:image" content="https://heartlinedynamics.com/og-image.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://heartlinedynamics.com/">
+    <meta property="twitter:title" content="Heartline Dynamics LTD">
+    <meta property="twitter:description" content="Delivering Exceptional Excellence in Real Estate and Construction across Nigeria.">
+    <meta property="twitter:image" content="https://heartlinedynamics.com/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png"> <style>
+        /* Your existing styles remain here... */
+        body { font-family: 'Inter', sans-serif; background-color: #020617; -webkit-tap-highlight-color: transparent; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        #app-container { width: 100%; min-height: 100vh; background-color: #0f172a; position: relative; }
+
+        @media (min-width: 768px) {
+            #app-container { display: flex; max-width: 100%; margin: 0; }
+            #main-scroll-area { flex: 1; margin-left: 250px; width: calc(100% - 250px); }
+        }
+
+        @media (max-width: 767px) {
+            #app-container { max-width: 480px; margin: 0 auto; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        }
+
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="text-slate-200">
+<noscript>
+    <div style="padding: 20px; background: white; color: black;">
+        <h1>Heartline Dynamics LTD</h1>
+        <p>We provide exceptional real estate solutions in Nigeria.</p>
+        <h2>Our Properties</h2>
+        <ul>
+            <li>4 Bedroom Semi-Detached in Guzape - ₦142,986,960</li>
+            <li>3 Bedroom Pent House in Lugbe - ₦9,575,000</li>
+            <li>Signature Residence in Wuye - ₦158,676,720</li>
+            </ul>
+        <p>Please enable JavaScript to view our full interactive portfolio and mortgage calculators.</p>
+    </div>
+</noscript>
+    <div id="app-container"> 
+        
+        <aside class="hidden md:flex fixed top-0 left-0 w-[250px] h-screen bg-slate-900 border-r border-slate-800 flex-col z-50">
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="HDL Logo" class="h-8 w-auto object-contain" />
+                    <h1 class="text-lg font-bold text-white tracking-tight leading-tight">Heartline<br>Dynamics</h1>
+                    
+                </div>
+                <p class="text-[12px] text-slate-200">Delivering Exceptional Excellence</p>
+            </div>
+            <div class="flex-1 py-6 px-4 space-y-2" id="desktop-nav-container"></div>
+            <div class="p-4 border-t border-slate-800">
+                <div class="bg-slate-800/50 rounded-xl p-3 flex items-center gap-3">
+                    <img src="logo.png" alt="HDL Logo" class="h-10 w-auto object-contain rounded-md bg-white" />
+                    <div>
+                        <p class="text-sm font-semibold text-white">Heartline Dynamics</p>
+                        <p class="text-[10px] text-slate-400"> Delivering Exceptional Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div id="main-scroll-area" class="pb-24 md:pb-0">
+            
+            <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 p-4 pt-6 md:py-4 md:px-8 flex justify-between items-center transition-all duration-300">
+                <div class="flex md:hidden items-center gap-3">
+                    <img src="logo.png" alt="Logo" class="h-10 w-10 object-contain rounded-full bg-slate-800 border border-slate-700">
+                    <div>
+                        <p class="text-[10px] text-slate-400">Welcome to</p>
+                        <h2 class="text-white font-semibold text-sm tracking-wide">HEARTLINE DYNAMICS</h2>
+                        <p class="text-[12px] text-slate-200">Delivering Exceptional Excellence</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex flex-1 max-w-xl mx-auto px-6">
+                    <div class="w-full bg-slate-800/90 rounded-xl flex items-center px-4 py-2.5 border border-slate-700 focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500 transition-all">
+                        <i data-lucide="search" class="w-5 h-5 text-slate-400 mr-3"></i>
+                        <input type="text" placeholder="Search Projects, Estates, Services..." class="bg-transparent text-white w-full outline-none placeholder-slate-500 text-sm font-medium">
+                    </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <button class="relative p-2 rounded-full bg-slate-800 hover:bg-slate-700 transition">
+                        <i data-lucide="bell" class="w-5 h-5 text-slate-200"></i>
+                        <span class="absolute top-1.5 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-slate-800"></span>
+                    </button>
+                </div>
+            </header>
+
+            <main id="main-content" class="fade-in max-w-7xl mx-auto md:p-8">
+                
+                <div id="home-sections">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 px-4 md:px-0 mt-4 md:mt-0">
+                        <div class="lg:col-span-2">
+                            <div class="h-full p-6 rounded-[2rem] bg-gradient-to-r from-purple-700 to-indigo-600 shadow-xl shadow-purple-900/30 relative overflow-hidden group">
+                                <div class="absolute -top-12 -right-12 w-48 h-48 bg-white opacity-5 rounded-full blur-3xl"></div>
+                                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-400 opacity-10 rounded-full blur-2xl"></div>
+                                <div class="relative z-10 flex flex-col h-full justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">FINANCE</span>
+                                            <span class="text-purple-200 text-xs font-medium">Housing Solutions</span>
+                                        </div>
+                                        <h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-1">Affordable Housing</h1>
+                                        <p class="text-purple-100 text-sm max-w-sm">We provide structured payment plans, mortgage support, and trust-based housing promotions.</p>
+                                    </div>
+                                    <div class="mt-6 bg-black/20 backdrop-blur-md rounded-xl p-3 flex justify-between items-center border border-white/5">
+                                        <div class="text-xs text-purple-100">
+                                            <span class="block opacity-60 mb-0.5">Projects In</span>
+                                            <span class="font-semibold text-white">Lagos, Abuja, Kano & More</span>
+                                        </div>
+                                        <button class="bg-white text-purple-700 px-4 py-2 rounded-lg text-xs font-bold hover:bg-purple-50 transition">Get Started</button>
+                                    </div>
+                                    <div class="mt-6 bg-gray-900/60 backdrop-blur-md rounded-xl p-3 flex justify-between items-center border border-white/10">
+                                        <div class="text-xs text-purple-100">
+                                            <span class="block opacity-60 mb-0.5">Mortgage?</span>
+                                            <span class="font-semibold text-white">Get approved in 48 hours</span>
+                                        </div>
+                                        <a href="https://wa.me/2348036732386" target="_blank" rel="noopener noreferrer" class="relative inline-block bg-white text-purple-900 px-4 py-2 rounded-lg text-xs font-bold hover:bg-purple-50 transition group decoration-0">
+                                            <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                                                <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                                            </span>
+                                            Apply Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-4">
+                            <div class="grid grid-cols-2 gap-4 h-full">
+                                <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700/50 flex flex-col items-center justify-center text-center gap-2 hover:bg-slate-800 transition">
+                                    <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center"><i data-lucide="home" class="w-5 h-5"></i></div>
+                                    <span class="text-xs font-semibold text-white">Real Estate</span>
+                                </div>
+                                <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700/50 flex flex-col items-center justify-center text-center gap-2 hover:bg-slate-800 transition">
+                                    <div class="w-10 h-10 rounded-full bg-orange-500/20 text-orange-500 flex items-center justify-center"><i data-lucide="hammer" class="w-5 h-5"></i></div>
+                                    <span class="text-xs font-semibold text-white">Construction</span>
+                                </div>
+                                <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700/50 flex flex-col items-center justify-center text-center gap-2 hover:bg-slate-800 transition">
+                                    <div class="w-10 h-10 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center"><i data-lucide="trees" class="w-5 h-5"></i></div>
+                                    <span class="text-xs font-semibold text-white">Land</span>
+                                </div>
+                                <div class="bg-slate-800/50 p-4 rounded-2xl border border-slate-700/50 flex flex-col items-center justify-center text-center gap-2 hover:bg-slate-800 transition">
+                                    <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                                    <span class="text-xs font-semibold text-white">Energy</span>
+                                </div>
+                                <div class="col-span-2 bg-slate-800/50 p-4 rounded-2xl border border-slate-700/50 flex flex-col items-center justify-center text-center gap-2 hover:bg-slate-800 transition">
+                                    <div class="w-10 h-10 rounded-full bg-lime-500/20 text-lime-500 flex items-center justify-center"><i data-lucide="sprout" class="w-5 h-5"></i></div>
+                                    <span class="text-xs font-semibold text-white">Agriculture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center px-4 md:px-0 mb-6">
+                        <h2 class="text-purple-300 font-bold text-sm md:text-xl flex items-center gap-2">
+                            <span>
+                                Properties by <span class="text-yellow-400">Mshel Homes Limited</span> proudly promoted by Heartline Dynamics
+                            </span>
+                        </h2>
+                    </div>
+                </div> 
+                <div id="dynamic-content-area" class="px-4 md:px-0">
+                    <div id="listings-feed" class="pb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+                </div>
+
+            </main>
+        </div>
+
+        <nav id="mobile-nav" class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 px-2 py-2 pb-6 flex justify-around items-end z-50 max-w-[480px] mx-auto w-full">
+        </nav>
+
+    </div>
+    
+    <div id="property-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center px-4">
+        <div onclick="closePropertyModal()" class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
+        <div class="relative bg-slate-900 w-full max-w-lg rounded-2xl border border-slate-700 shadow-2xl overflow-hidden transform transition-all scale-100 flex flex-col max-h-[90vh]">
+            <button onclick="closePropertyModal()" class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-md transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modal-content" class="overflow-y-auto scrollbar-hide"></div>
+            <div class="p-4 border-t border-slate-800 bg-slate-900 z-10 flex gap-3">
+                <a href="tel:08036732386" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition border border-slate-700">
+                    <i data-lucide="phone" class="w-4 h-4"></i> Call
+                </a>
+                <a href="https://wa.me/2348036732386" class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition shadow-lg shadow-purple-900/20">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA ---
+        const APP_STATE = { activeTab: 'home' };
+
+        // Real Estate Listings
+        const PROPERTIES = [
+            { id: 1, title: '4 Bedroom Semi-Detached', location: 'Plot 1596 Cadastral Zone A09 Guzape District', price: 142986960, type: 'KAPITAL VILLA - Estate Lands Elegant', typeColor: 'bg-purple-600', beds: 4, baths: 5, sqm: 300, image: '333.png', tag: 'FCDA APPROVED',paymentPlans: [
+            { duration: '2 Months', total: 142986960, initial: 71493480, percent: '50%', balance: 71493480, monthly: 35746740 },
+            { duration: '6 Months', total: 160145395.20, initial: 48043618.56, percent: '30%', balance: 112101776.64, monthly: 18683629.44 }
+        ] },
+            { id: 2, title: '4 Bedroom Terrace Duplex', location: 'Plot 1596 Cadastral Zone A09 Guzape District', price: 95400000, type: 'KAPITAL VILLA - Estate Lands Hedera', typeColor: 'bg-purple-600', beds: 4, baths: 3, sqm: 200, image: '2.png', tag: 'FCDA APPROVED',paymentPlans: [
+            { duration: '2 Months', total: 95400000, initial: 47700000, percent: '50%', balance: 71493480, monthly: 23850000 },
+            { duration: '6 Months', total: 106848000, initial: 32054400, percent: '30%', balance: 74793600, monthly: 12465600 }
+        ] },
+            { id: 3, title: '3 Bedroom Pent House', location: 'Lugbe, Airport Road', price: 9575000, type: 'Mshel Pent Haven', typeColor: 'bg-orange-600', beds: 3, baths: 3, sqm: 350, image: '31.png', tag: 'FCDA APPROVED',paymentPlans: [
+            { duration: '4 Months', total: 9575000, initial: 2872500, percent: '30%', balance: 6702500, monthly: 1675625 },
+            { duration: '8 Months', total: 10341000, initial: 3102300, percent: '30%', balance: 7238700, monthly: 904836 },
+            { duration: '12 Months', total:11168280 , initial: 3350484, percent: '30%', balance: 7817796, monthly: 651483 },
+            { duration: '18 Months', total: 12508474, initial: 2501695, percent: '20%', balance: 10006779, monthly: 555932 }
+        ] },
+            { id: 4, title: '4 Bedroom Pent House', location: 'Lugbe, Airport Road', price: 14362000, type: 'Mshel Pent Haven', typeColor: 'bg-orange-600', beds: 4, baths: 5, sqm: 450, image: '4.png', tag: 'PREMIUM',paymentPlans: [
+            { duration: '4 Months', total: 14362000, initial: 4308600, percent: '30%', balance: 10053400, monthly: 2513350 },
+            { duration: '8 Months', total: 15510960, initial: 4653288, percent: '30%', balance: 108576728, monthly: 1357209 },
+            { duration: '12 Months', total: 16751837, initial: 5025551, percent: '30%', balance: 11726286, monthly: 977191 },
+            { duration: '18 Months', total: 18762057, initial: 3752411, percent: '20%', balance: 15009646, monthly: 833869 }
+        ] },
+            { id: 5, title: '3 Bedroom Apartment', location: 'Plot 1797 Cadastral Zone B03 Wuye District', price: 158676720, type: 'Signature Residence by Mshel Homes', typeColor: 'bg-green-600', beds: 3, baths: 3, sqm: 180, image: '5.png', tag: 'FCDA APPROVED',paymentPlans: [
+            { 
+            duration: '6 Months', 
+            total: 158676720, 
+            initial: 47603016, 
+            percent: '30%', 
+            balance: 111073704, 
+            schedule: [
+                { month: 'Month 0', amount: 47603016, note: '30% Initial' },
+                { month: 'Month 1', amount: 23801508, note: '15%' },
+                { month: 'Month 2', amount: 23801508, note: '15%' },
+                { month: 'Month 3', amount: 15867672, note: '10%' },
+                { month: 'Month 4', amount: 15867672, note: '10%' },
+                { month: 'Month 5', amount: 15867672, note: '10%' },
+                { month: 'Month 6', amount: 15867672, note: '10%' }
+            ],
+            monthly: 18512284 
+        },
+        { 
+            duration: '12 Months', 
+            total: 190412064, 
+            initial: 57123619.2, 
+            percent: '30%', 
+            balance: 133288444.8, 
+            schedule: [
+                { month: 'Month 0', amount: 57123619.2, note: '30% Initial' },
+                { month: 'Month 3', amount: 38082412.8, note: '20%' },
+                { month: 'Month 6', amount: 38082412.8, note: '20%' },
+                { month: 'Month 9', amount: 28561809.6, note: '15%' },
+                { month: 'Month 12', amount: 28561809.6, note: '15%' }
+            ],
+            monthly: 11107370.4 
+        }
+            
+        ] },
+            { id: 6, title: '5 Bedroom Terrace Duplex (REGAL)', location: 'Plot 1797 Cadastral Zone B03 Wuye District', price: 310258063.4, type: 'Signature Residence by Mshel Homes', typeColor: 'bg-green-600', beds: 5, baths: 5, sqm: 180, image: '6.png', tag: 'FCDA APPROVED',paymentPlans: [
+            { 
+            duration: '6 Months', 
+            total: 310258063.4, 
+            initial: 93077419, 
+            percent: '30%', 
+            balance: 217180644.4, 
+            schedule: [
+                { month: 'Month 0', amount: 93077419, note: '30% Initial' },
+                { month: 'Month 1', amount: 46538709.5, note: '15%' },
+                { month: 'Month 2', amount: 46538709.5, note: '15%' },
+                { month: 'Month 3', amount: 31025806.3, note: '10%' },
+                { month: 'Month 4', amount: 31025806.3, note: '10%' },
+                { month: 'Month 5', amount: 31025806.3, note: '10%' },
+                { month: 'Month 6', amount: 31025806.3, note: '10%' }
+            ],
+            monthly: 51709677.20 
+        },
+        { 
+            duration: '12 Months', 
+            total: 372309676, 
+            initial: 111692903, 
+            percent: '30%', 
+            balance: 260616773, 
+            schedule: [
+                { month: 'Month 0', amount: 111692903, note: '30% Initial' },
+                { month: 'Month 3', amount: 74461935.2, note: '20%' },
+                { month: 'Month 6', amount: 74461935.2, note: '20%' },
+                { month: 'Month 9', amount: 55846451.4, note: '15%' },
+                { month: 'Month 12', amount: 55846451.4, note: '15%' }
+            ],
+            monthly: 31025806.35 
+        }
+            
+        ] },
+            { id: 7, title: '5 Bedroom Semi-Detached Duplex + 1BQ', location: 'Plot 1797 Cadastral Zone B03 Wuye District', price: 394757922.3, type: 'Signature Residence by Mshel Homes', typeColor: 'bg-green-600', beds: 5, baths: 6, sqm: 300, image: '7.png', tag: 'FCDA APPROVED',paymentPlans: [
+            { duration: '6 Months', total: 394757922, initial: 118427376, percent: '30%', balance: 276330546, monthly: 46055100 },
+            { duration: '12 Months', total: 473709507, initial: 142112852, percent: '30%', balance: 331596655 , monthly: 27633054 },
+        ] },
+            { id: 8, title: '4 Bedroom Semi-Detached Duplex', location: 'Hutu Exclusive Golf Resort Estate by Mshel', price: 120000000, type: 'Hutu Exclusive Golf Resort Estate', typeColor: 'bg-purple-600', beds: 4, baths: 5, sqm: 250, image: '8.png', tag: 'ESTATE LAND',paymentPlans: [
+            { duration: '4 Months', total: 15552000, initial: 7776000, percent: '50%', balance: 7776000, monthly: 1944000 },
+            { duration: '8 Months', total: 17418240, initial: 5225472, percent: '30%', balance: 12192768, monthly: 1524096 },
+        ] },
+            { id: 9, title: '4 Bedroom Semi-Detached Duplex', location: 'Hutu Exclusive Golf Resort Estate by Mshel', price: 21772800, type: 'Hutu Exclusive Golf Resort Estate', typeColor: 'bg-purple-600', beds: 4, baths: 5, sqm: 350, image: '9.png', tag: 'ESTATE LAND',paymentPlans: [
+            { duration: '4 Months', total: 21772800, initial: 10886400, percent: '50%', balance: 10886400, monthly: 2721600 },
+            { duration: '8 Months', total: 24385536, initial: 7315660.80, percent: '30%', balance: 17069875.20, monthly: 2133734.40 },
+        ] },
+            { id: 10, title: '5 Bedroom Fully-Detached Duplex', location: 'Hutu Exclusive Golf Resort Estate by Mshel', price: 31104000, type: 'Hutu Exclusive Golf Resort Estate', typeColor: 'bg-purple-600', beds: 5, baths: 6, sqm: 500, image: '10.png', tag: 'ESTATE LAND',paymentPlans: [
+            { duration: '4 Months', total: 9575000, initial: 2872500, percent: '30%', balance: 6702500, monthly: 1675625 },
+            { duration: '8 Months', total: 10341000, initial: 3102300, percent: '30%', balance: 7238700, monthly: 904836 },
+            { duration: '12 Months', total:11168280 , initial: 3350484, percent: '30%', balance: 7817796, monthly: 651483 },
+            { duration: '18 Months', total: 12508474, initial: 2501695, percent: '20%', balance: 10006779, monthly: 555932 }
+        ] },
+            { id: 11, title: '3 Bedroom Terrace Duplex', location: 'Hutu Exclusive Golf Resort Estate by Mshel', price: 9331200, type: 'Hutu Exclusive Golf Resort Estate', typeColor: 'bg-purple-600', beds: 3, baths: 3, sqm: 150, image: '11.png', tag: 'ESTATE LAND',paymentPlans: [
+            { duration: '4 Months', total: 9331200, initial: 4665600, percent: '50%', balance: 4665600, monthly: 1166400 },
+            { duration: '8 Months', total: 10450944, initial: 3135283.20, percent: '30%', balance: 7315660.80, monthly: 9144457.60 },
+        ] },
+            { id: 12, title: '3 Bedroom Terrace Duplex', location: 'Plot 138 Kunape, Bwari FCT', price: 2040188, type: 'Hedge Court by Mshel Homes', typeColor: 'bg-red-600', beds: 3, baths: 3, sqm: 150, image: '11.png', tag: 'LUXURY',paymentPlans: [
+            { duration: '6 Months', total: 2040188, initial: 408038, percent: '20%', balance: 1632150, monthly: 272025 },
+            { duration: '12 Months', total: 2448226 , initial: 489645, percent: '30%', balance: 1958581, monthly: 163216 },
+            { duration: '18 Months', total: 2652244 , initial: 530449, percent: '30%', balance: 2121795, monthly: 117878 },
+        ] },
+        { 
+            id: 13, 
+            title: '1 Bedroom Apartment', 
+            location: 'Plot 138 Kunape Bwari FCT', 
+            price: 9000000, 
+            type: 'Hedge Court by Mshel Homes', 
+            typeColor: 'bg-red-600', 
+            beds: 1, 
+            baths: 1, 
+            sqm: 100, 
+            image: '13.png', 
+            tag: 'FCDA APPROVED',
+            paymentPlans: [
+                { 
+                    duration: '6 Months', 
+                    total: 9000000, 
+                    initial: 2700000, 
+                    percent: '30%', 
+                    balance: 6300000, 
+                    monthly: 1050000 
+                },
+                { 
+                    duration: '12 Months', 
+                    total: 10800000, 
+                    initial: 3240000, 
+                    percent: '30%', 
+                    balance: 7560000, 
+                    monthly: 630000 
+                }
+            ] 
+        },
+            { id: 14, title: '5 Bedroom Fully-Detached Duplex', location: 'Plot 138 Kunape Bwari FCT', price: 6890000, type: 'Hedge Court by Mshel Homes', typeColor: 'bg-red-600', beds: 5, baths: 5, sqm: 500, image: '14.png', tag: 'FCDA APPROVED',paymentPlans: [
+            { duration: '6 Months', total: 6890000, initial: 1378000, percent: '20%', balance: 5512000, monthly: 918667 },
+            { duration: '12 Months', total: 8268000 , initial: 1653600, percent: '20%', balance: 6614400, monthly: 551200 },
+            { duration: '18 Months', total: 8957000 , initial: 1791400, percent: '20%', balance: 7165600, monthly: 398089 },
+        ] },
+            { id: 15, title: '4 Bedroom Terrace Duplex', location: 'Plot 138 Kunape Bwari FCT', price: 2720250, type: 'Hedge Court by Mshel Homes', typeColor: 'bg-red-600', beds: 4, baths: 4, sqm: 200, image: '15.png', tag: 'LUXURY',paymentPlans: [
+            { duration: '6 Months', total: 2720250, initial: 544050, percent: '20%', balance: 2176200, monthly: 362700 },
+            { duration: '12 Months', total: 3264300, initial: 652860, percent: '20%', balance: 2611440, monthly: 217620 },
+            { duration: '18 Months', total: 356325 , initial: 707265, percent: '20%', balance: 2829060, monthly: 157170 },
+        ] },
+            { id: 16, title: 'Estate Land for Sale in Lagos', location: 'Ajah, Lagos State', price: 56250000, type: 'With Government Title Deed Allocation', typeColor: 'bg-green-600', beds: 0, baths: 0, sqm: 300, image: '16.jpg', tag: 'LAND FOR SALE',paymentPlans: [
+            { duration: '2 Months Flexible Non-Fixed Payment', total: 56250000, },
+            { duration: '6 Months Flexible Non-Fixed Payment', total: 69625000, }
+        ] },
+        { id: 17, title: '1 Bedroom Apartment', location: 'Ajah, Lagos State', price: 33000000, type: 'With Government Title Deed Allocation', typeColor: 'bg-green-600', beds: 1, baths: 1, sqm: 120, image: '17.jpg', tag: 'ELARIS HOMES BY MSHEL HOMES - LAGOS',paymentPlans: [
+            { duration: '2 Months Flexible Non-Fixed Payment', total: 33000000, },
+            { duration: '6 Months Flexible Non-Fixed Payment', total: 36960000, }
+        ] },
+        { id: 18, title: '3 Bedroom Terrace Duplex', location: 'Ajah, Lagos State', price: 90000000, type: 'With Government Title Deed Allocation', typeColor: 'bg-green-600', beds: 3, baths: 4, sqm: 300, image: '18.jpg', tag: 'ELARIS HOMES BY MSHEL HOMES - LAGOS',paymentPlans: [
+            { duration: '2 Months Flexible Non-Fixed Payment', total: 90000000, },
+            { duration: '6 Months Flexible Non-Fixed Payment', total: 100800000, }
+        ] },
+        { id: 19, title: '2 Bedroom Apartment', location: 'Ajah, Lagos State', price: 58250000, type: 'With Government Title Deed Allocation', typeColor: 'bg-green-600', beds: 2, baths: 2, sqm: 200, image: '17.jpg', tag: 'ELARIS HOMES BY MSHEL HOMES - LAGOS',paymentPlans: [
+            { duration: '2 Months Flexible Non-Fixed Payment', total: 58250000, },
+            { duration: '6 Months Flexible Non-Fixed Payment', total: 65240000, }
+        ] },
+        { id: 20, title: '3 Bedroom Apartment', location: 'Ajah, Lagos State', price: 79000000, type: 'With Government Title Deed Allocation', typeColor: 'bg-green-600', beds: 3, baths: 4, sqm: 300, image: '17.jpg', tag: 'ELARIS HOMES BY MSHEL HOMES - LAGOS',paymentPlans: [
+            { duration: '2 Months Flexible Non-Fixed Payment', total: 79000000, },
+            { duration: '6 Months Flexible Non-Fixed Payment', total: 88480000, }
+        ] },
+        ];
+        function generateStructuredData() {
+    // 1. Organization Schema
+    const orgSchema = {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Heartline Dynamics LTD",
+        "image": "https://heartlinedynamics.com/logo.png",
+        "description": "Real Estate Development, Construction, and Agricultural Investment company.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Abuja",
+            "addressCountry": "NG"
+        },
+        "telephone": "+2348036732386",
+        "priceRange": "₦₦"
+    };
+
+    // 2. Real Estate Listing Schema (Dynamic from your array)
+    const listingsSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": PROPERTIES.map((prop, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+                "@type": "SingleFamilyResidence", // Or Residence/Apartment based on logic
+                "name": prop.title,
+                "description": `Luxury ${prop.type} located at ${prop.location}. Features ${prop.beds} beds and ${prop.baths} baths.`,
+                "image": `https://heartlinedynamics.com/${prop.image}`,
+                "numberOfRooms": prop.beds,
+                "numberOfBathroomsTotal": prop.baths,
+                "floorSize": {
+                    "@type": "QuantitativeValue",
+                    "value": prop.sqm,
+                    "unitCode": "SQM"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": prop.location,
+                    "addressCountry": "NG"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": prop.price,
+                    "priceCurrency": "NGN",
+                    "availability": "https://schema.org/InStock"
+                }
+            }
+        }))
+    };
+
+    // Inject into Head
+    const orgScript = document.createElement('script');
+    orgScript.type = 'application/ld+json';
+    orgScript.text = JSON.stringify(orgSchema);
+    document.head.appendChild(orgScript);
+
+    const listScript = document.createElement('script');
+    listScript.type = 'application/ld+json';
+    listScript.text = JSON.stringify(listingsSchema);
+    document.head.appendChild(listScript);
+}
+
+        // Updated Navigation for Heartline
+        const NAV_ITEMS = [
+            { id: 'home', icon: 'home', label: 'Home' },
+            { id: 'services', icon: 'briefcase', label: 'Services' }, // Was Explore
+            { id: 'projects', icon: 'bar-chart-2', label: 'Projects' }, // Changed Icon to Graph
+            { id: 'contact', icon: 'phone', label: 'Contact' }, // Was Me
+        ];
+
+        const formatCurrency = (amount) => new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', minimumFractionDigits: 0 }).format(amount);
+
+        // --- CONTENT GENERATORS ---
+
+        function getServicesHTML() {
+            return `
+                <div class="fade-in space-y-6 pb-20">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-2">Our Services</h2>
+                        <p class="text-slate-400 text-sm">Diversified contracting & investment solutions</p>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="w-12 h-12 bg-blue-600/20 text-blue-500 rounded-xl flex items-center justify-center mb-4"><i data-lucide="building" class="w-6 h-6"></i></div>
+                        <h3 class="text-lg font-bold text-white mb-2">Real Estate Development</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            We operate across the full value chain: Land acquisition, development of residential & commercial properties, and Housing Finance solutions including REITs.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="w-12 h-12 bg-orange-600/20 text-orange-500 rounded-xl flex items-center justify-center mb-4"><i data-lucide="hammer" class="w-6 h-6"></i></div>
+                        <h3 class="text-lg font-bold text-white mb-2">Construction & Engineering</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Specialized general contracts including civil engineering, road & drainage construction, water systems, and electrical installations.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="w-12 h-12 bg-green-600/20 text-green-500 rounded-xl flex items-center justify-center mb-4"><i data-lucide="users" class="w-6 h-6"></i></div>
+                        <h3 class="text-lg font-bold text-white mb-2">Public Sector & Community</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            We partner with governments for PPP projects, schools, healthcare centers, and community development initiatives.
+                        </p>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <div class="w-12 h-12 bg-green-600/20 text-green-500 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="wheat" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Agricultural Input Supply</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Participating supplier for the National Agricultural Growth Scheme (NAGS-AP) and Bank of Agriculture. We provide fertilizers, seeds, and agro-chemicals for the 2025/2026 Dry Season programmes covering Wheat, Rice, Maize, and Cassava.
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getContactHTML() {
+            return `
+                <div class="fade-in pb-20">
+                     <div class="h-40 bg-gradient-to-r from-purple-800 to-blue-900 rounded-2xl mb-6 relative flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 text-center">
+                            <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
+                            <p class="text-purple-200 text-sm">We'd love to hear from you</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <a href="tel:08036732386" class="block bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center gap-4 hover:border-purple-500 transition">
+                            <div class="w-10 h-10 bg-purple-500/20 text-purple-500 rounded-full flex items-center justify-center"><i data-lucide="phone" class="w-5 h-5"></i></div>
+                            <div>
+                                <p class="text-xs text-slate-400">Call Us</p>
+                                <p class="text-white font-semibold">0803 673 2386</p>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:08069235586" class="block bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center gap-4 hover:border-purple-500 transition">
+                            <div class="w-10 h-10 bg-purple-500/20 text-purple-500 rounded-full flex items-center justify-center"><i data-lucide="phone" class="w-5 h-5"></i></div>
+                            <div>
+                                <p class="text-xs text-slate-400">Support Line</p>
+                                <p class="text-white font-semibold">0806 923 5586</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:heartlinedynamicsltd@gmail.com" class="block bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center gap-4 hover:border-purple-500 transition">
+                            <div class="w-10 h-10 bg-red-500/20 text-red-500 rounded-full flex items-center justify-center"><i data-lucide="mail" class="w-5 h-5"></i></div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email Us</p>
+                                <p class="text-white font-semibold">heartlinedynamicsltd@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <div class="grid grid-cols-2 gap-4 mt-6">
+                            <a href="https://www.instagram.com/heartlinedynamicsltd?igsh=MTZobjV1YWE4ZTdiaw==" target="_blank" class="bg-gradient-to-br from-purple-600 to-pink-600 p-4 rounded-xl text-center text-white font-bold text-sm shadow-lg">
+                                Instagram
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61584265041553" target="_blank" class="bg-[#1877F2] p-4 rounded-xl text-center text-white font-bold text-sm shadow-lg">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- NEW: DYNAMIC CHART.JS CONTENT ---
+        function getProjectsHTML() {
+            return `
+                <div class="fade-in space-y-8 pb-20">
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold text-white mb-2">Market Analytics</h2>
+                        <p class="text-slate-400 text-sm">Data-driven insights into our property portfolio.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 shadow-lg">
+                            <h3 class="text-white font-semibold mb-4 ml-2 border-l-4 border-purple-500 pl-2">Average Price by Project</h3>
+                            <div class="relative h-64 w-full">
+                                <canvas id="chartTypePrice"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 shadow-lg">
+                            <h3 class="text-white font-semibold mb-4 ml-2 border-l-4 border-blue-500 pl-2">Price vs. Bedroom Count</h3>
+                            <div class="relative h-64 w-full">
+                                <canvas id="chartPriceBeds"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 shadow-lg md:col-span-2 md:w-3/4 md:mx-auto">
+                            <h3 class="text-white font-semibold mb-4 ml-2 border-l-4 border-green-500 pl-2 text-center">Portfolio Tag Distribution</h3>
+                            <div class="relative h-64 w-full flex justify-center">
+                                <canvas id="chartTags"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-2xl mt-8">
+                        <h4 class="text-blue-400 font-bold mb-2 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4"></i> Analyst Note</h4>
+                        <ul class="list-disc list-inside text-slate-300 text-sm space-y-2 leading-relaxed">
+                            <li><strong>Premium Range:</strong> Our <span class="text-white font-semibold">Signature Residence</span> line commands the highest market value, ideal for high-net-worth investors in Wuye.</li>
+                            <li><strong>Entry Level:</strong> <span class="text-white font-semibold">Hedge Court</span> offers the most accessible entry point (under ₦10M) in Bwari.</li>
+                            <li><strong>Inventory Mix:</strong> The majority of our portfolio is <span class="text-green-400">FCDA Approved</span>, ensuring secure title documentation.</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- CHART RENDERING LOGIC ---
+        function renderCharts() {
+            // Configure Global Chart.js defaults for Dark Mode
+            Chart.defaults.color = '#94a3b8'; // text-slate-400
+            Chart.defaults.borderColor = '#334155'; // border-slate-700
+            Chart.defaults.font.family = "'Inter', sans-serif";
+
+            // 1. Prepare Data for Type vs Price
+            const typeGroups = {};
+            PROPERTIES.forEach(p => {
+                // Simplify type name (remove extra descriptions after ' - ' or ' by ')
+                let shortType = p.type.split(' - ')[0].replace(' by Mshel Homes', '');
+                if (!typeGroups[shortType]) typeGroups[shortType] = { sum: 0, count: 0 };
+                typeGroups[shortType].sum += p.price;
+                typeGroups[shortType].count += 1;
+            });
+            const typeLabels = Object.keys(typeGroups);
+            const typePrices = typeLabels.map(t => typeGroups[t].sum / typeGroups[t].count);
+
+            new Chart(document.getElementById('chartTypePrice'), {
+                type: 'bar',
+                data: {
+                    labels: typeLabels,
+                    datasets: [{
+                        label: 'Avg Price (₦)',
+                        data: typePrices,
+                        backgroundColor: '#a855f7', // purple-500
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return formatCurrency(context.raw);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { callback: (value) => '₦' + (value / 1000000).toFixed(0) + 'M' }
+                        },
+                        x: {
+                            ticks: { font: { size: 10 }, maxRotation: 45, minRotation: 45 }
+                        }
+                    }
+                }
+            });
+
+            // 2. Prepare Data for Price vs Beds (Scatter)
+            const scatterData = PROPERTIES.map(p => ({
+                x: p.beds,
+                y: p.price,
+                title: p.title // custom data for tooltip
+            }));
+
+            new Chart(document.getElementById('chartPriceBeds'), {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Properties',
+                        data: scatterData,
+                        backgroundColor: '#3b82f6', // blue-500
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const point = context.raw;
+                                    return `${point.title}: ${formatCurrency(point.y)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Bedrooms' },
+                            ticks: { stepSize: 1 }
+                        },
+                        y: {
+                            title: { display: true, text: 'Price' },
+                            ticks: { callback: (value) => '₦' + (value / 1000000).toFixed(0) + 'M' }
+                        }
+                    }
+                }
+            });
+
+            // 3. Prepare Data for Tags (Doughnut)
+            const tagCounts = {};
+            PROPERTIES.forEach(p => {
+                const tag = p.tag || 'Other';
+                tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+            });
+
+            new Chart(document.getElementById('chartTags'), {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(tagCounts),
+                    datasets: [{
+                        data: Object.values(tagCounts),
+                        backgroundColor: ['#22c55e', '#a855f7', '#f97316', '#3b82f6'], // green, purple, orange, blue
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right' }
+                    }
+                }
+            });
+        }
+
+        function getListingsHTML() {
+            return `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">` + PROPERTIES.map(prop => `
+                <div onclick="openPropertyModal(${prop.id})" class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition duration-300 shadow-lg group cursor-pointer relative flex flex-col h-full fade-in hover:-translate-y-1">
+                    <div class="relative h-52 w-full overflow-hidden">
+                        <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out">
+                        <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-[10px] font-bold text-white uppercase tracking-wider shadow-sm border border-slate-700">${prop.tag}</div>
+                        <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                             <span class="text-[10px] font-bold px-2 py-1 rounded-md text-white ${prop.typeColor} shadow-md">${prop.type}</span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1">
+                        <h3 class="text-white font-semibold text-lg truncate mb-1">${prop.title}</h3>
+                        <div class="flex items-center text-slate-400 text-sm mb-3">
+                            <i data-lucide="map-pin" class="w-3 h-3 mr-1.5 text-purple-500"></i>${prop.location}
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-3 border-t border-slate-700/50">
+                            <div class="text-white font-bold text-lg">${formatCurrency(prop.price)}<span class="text-xs text-slate-500 font-normal">${prop.period || ''}</span></div>
+                            <button class="bg-slate-700 text-white p-2 rounded-lg hover:bg-purple-600 transition"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `).join('') + `</div>`;
+        }
+        
+        function openPropertyModal(id) {
+            const prop = PROPERTIES.find(p => p.id === id);
+            if (!prop) return;
+
+            const modal = document.getElementById('property-modal');
+            const content = document.getElementById('modal-content');
+
+            // Generate Payment Plan Table HTML
+            let paymentTableHTML = '';
+            if (prop.paymentPlans && prop.paymentPlans.length > 0) {
+                
+                const rows = prop.paymentPlans.map(plan => {
+                    const mainRow = `
+                        <tr class="border-b border-slate-700/50 hover:bg-slate-800/50 transition relative z-10">
+                            <td class="p-3 text-white font-bold bg-slate-800/30 align-top">${plan.duration}</td>
+                            <td class="p-3 text-slate-300 whitespace-nowrap align-top">${formatCurrency(plan.total)}</td>
+                            <td class="p-3 text-slate-300 align-top">
+                                <div class="flex flex-col">
+                                    <span>${formatCurrency(plan.initial)}</span>
+                                    <span class="text-[10px] text-purple-400 font-bold">${plan.percent}</span>
+                                </div>
+                            </td>
+                            <td class="p-3 text-slate-300 whitespace-nowrap align-top">${formatCurrency(plan.balance)}</td>
+                            <td class="p-3 text-white font-semibold whitespace-nowrap bg-purple-500/10 align-top">
+                                <div class="flex flex-col">
+                                    <span>${formatCurrency(plan.monthly)}</span>
+                                    ${plan.schedule ? '<span class="text-[10px] text-slate-400 font-normal italic">(Average)</span>' : ''}
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+
+                    let scheduleRow = '';
+                    if (plan.schedule && plan.schedule.length > 0) {
+                        const scheduleItems = plan.schedule.map(item => `
+                            <div class="flex justify-between items-center p-2 bg-slate-900/80 rounded border border-slate-700/50">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs text-slate-300 font-bold">${item.month}</span>
+                                    <span class="text-[9px] text-purple-300 bg-purple-500/20 px-1.5 py-0.5 rounded uppercase tracking-wider">${item.note}</span>
+                                </div>
+                                <span class="text-xs text-white font-mono">${formatCurrency(item.amount)}</span>
+                            </div>
+                        `).join('');
+
+                        scheduleRow = `
+                            <tr class="bg-slate-800/20">
+                                <td colspan="5" class="p-3 border-b border-slate-700/50">
+                                    <div class="text-[10px] uppercase font-bold text-slate-500 mb-2 pl-1">Payment Breakdown</div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        ${scheduleItems}
+                                    </div>
+                                </td>
+                            </tr>
+                        `;
+                    }
+                    return mainRow + scheduleRow;
+                }).join('');
+
+                paymentTableHTML = `
+                    <div class="mt-6">
+                        <h3 class="text-white font-semibold mb-3 flex items-center gap-2">
+                            <i data-lucide="credit-card" class="w-4 h-4 text-purple-500"></i> Payment Schedule
+                        </h3>
+                        <div class="overflow-x-auto rounded-xl border border-slate-700 bg-slate-900/50">
+                            <table class="w-full text-left text-xs">
+                                <thead class="bg-slate-800 text-slate-400 uppercase font-bold tracking-wider">
+                                    <tr>
+                                        <th class="p-3">Duration</th>
+                                        <th class="p-3">Total</th>
+                                        <th class="p-3">Initial Deposit</th>
+                                        <th class="p-3">Balance</th>
+                                        <th class="p-3">Monthly</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${rows}
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-[10px] text-slate-500 mt-2 italic">* Prices subject to change based on market rates.</p>
+                    </div>
+                `;
+            }
+
+            content.innerHTML = `
+                <div class="relative h-64 w-full group">
+                    <img src="${prop.image}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="${prop.typeColor} text-white text-[10px] font-bold px-2 py-1 rounded mb-2 inline-block shadow-lg border border-white/10">${prop.type}</span>
+                        <h2 class="text-2xl font-bold text-white leading-tight mb-1">${prop.title}</h2>
+                        <div class="flex items-center text-slate-300 text-sm">
+                            <i data-lucide="map-pin" class="w-3 h-3 mr-1.5 text-purple-400"></i> ${prop.location}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="bg-slate-800/50 p-3 rounded-xl text-center border border-slate-700/50">
+                            <i data-lucide="bed" class="w-5 h-5 text-purple-500 mx-auto mb-1"></i>
+                            <p class="text-lg font-bold text-white">${prop.beds}</p>
+                            <p class="text-[10px] text-slate-400">Beds</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-3 rounded-xl text-center border border-slate-700/50">
+                            <i data-lucide="bath" class="w-5 h-5 text-blue-500 mx-auto mb-1"></i>
+                            <p class="text-lg font-bold text-white">${prop.baths}</p>
+                            <p class="text-[10px] text-slate-400">Baths</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-3 rounded-xl text-center border border-slate-700/50">
+                            <i data-lucide="maximize" class="w-5 h-5 text-orange-500 mx-auto mb-1"></i>
+                            <p class="text-lg font-bold text-white">${prop.sqm}</p>
+                            <p class="text-[10px] text-slate-400">Sqm</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-gradient-to-r from-slate-800 to-slate-800/50 rounded-xl border border-slate-700/50">
+                        <div>
+                            <p class="text-xs text-slate-400 mb-0.5">Total Package Price</p>
+                            <p class="text-xl font-bold text-white">${formatCurrency(prop.price)}</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="flex items-center gap-1.5 bg-green-500/10 px-2 py-1 rounded-lg border border-green-500/20">
+                                <span class="relative flex h-2 w-2">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                <span class="text-xs font-bold text-green-400">Available</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-white font-semibold mb-2">Description</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Experience luxury living in this exceptional property located in the heart of ${prop.location}. 
+                            Perfect for families or investors looking for high ROI. Features modern amenities, 24/7 power supply, and top-tier security.
+                        </p>
+                    </div>
+
+                    ${paymentTableHTML}
+                </div>
+            `;
+            
+            lucide.createIcons();
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closePropertyModal() {
+            const modal = document.getElementById('property-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; 
+        }
+
+        // --- CORE LOGIC ---
+
+        function renderNavs() {
+            // Mobile
+            document.getElementById('mobile-nav').innerHTML = NAV_ITEMS.map(item => {
+                const isActive = APP_STATE.activeTab === item.id;
+                const color = isActive ? 'text-purple-500' : 'text-slate-500';
+                return `
+                    <button onclick="switchTab('${item.id}')" class="flex flex-col items-center gap-1 w-full ${color} transition-all">
+                        <i data-lucide="${item.icon}" class="w-6 h-6 ${isActive ? 'scale-110' : ''}"></i>
+                        <span class="text-[10px] font-medium">${item.label}</span>
+                    </button>
+                `;
+            }).join('');
+
+            // Desktop
+            document.getElementById('desktop-nav-container').innerHTML = NAV_ITEMS.map(item => {
+                const isActive = APP_STATE.activeTab === item.id;
+                const activeClass = isActive ? "bg-purple-600 text-white shadow-lg" : "text-slate-400 hover:bg-slate-800 hover:text-white";
+                return `
+                    <button onclick="switchTab('${item.id}')" class="flex items-center gap-3 w-full px-4 py-3 rounded-xl transition-all font-medium text-sm ${activeClass}">
+                        <i data-lucide="${item.icon}" class="w-5 h-5"></i> <span>${item.label}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function switchTab(tabId) {
+            APP_STATE.activeTab = tabId;
+            const homeSections = document.getElementById('home-sections');
+            const dynamicArea = document.getElementById('dynamic-content-area');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (tabId === 'home') {
+                homeSections.classList.remove('hidden');
+                dynamicArea.innerHTML = getListingsHTML();
+            } else if (tabId === 'services') {
+                homeSections.classList.add('hidden');
+                dynamicArea.innerHTML = getServicesHTML();
+            } else if (tabId === 'contact') {
+                homeSections.classList.add('hidden');
+                dynamicArea.innerHTML = getContactHTML();
+            } else if (tabId === 'projects') {
+                homeSections.classList.add('hidden');
+                dynamicArea.innerHTML = getProjectsHTML();
+                // RENDER CHARTS
+                setTimeout(renderCharts, 100); 
+            }
+
+            renderNavs();
+            lucide.createIcons();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            switchTab('home');
+            generateStructuredData(); // Init
+        });
+
+    </script>
+</body>
+</html>
