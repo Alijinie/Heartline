@@ -399,7 +399,7 @@
             { duration: '6 Months Flexible Non-Fixed Payment', total: 88480000, }
         ] },
         { id: 21, title: 'Mshel Horizon Shopping Mall (BASEMENT FLOOR)', location: 'Plot No. 869 Cadastral Zone B00, Kukwaba District, FCT, Abuja', price: 840000, type: 'OUTRIGHT PAYMENT (Per Square Meter)', typeColor: 'bg-red-600', beds: 0, baths: 0, sqm: 30, image: '19.png', tag: 'Mshel Horizon Shopping Mall Kukwaba (BASEMENT FLOOR)',paymentPlans: [
-            { duration: 'Outright Payment (Minimum Square Metres for sale is 30 sqm)', total: 840000, },
+            { duration: 'Outright Payment', total: 840000, },
             { duration: '6 - 12 Months Payment Plan is available upon request', }
             
         ] },
@@ -616,6 +616,47 @@
             `;
         }
 
+        const COMMERCIAL_SPACES = [
+    { estate: "Forte", category: "Creche (School)", sqm: 452.99, price: 28325464.7 },
+    { estate: "Forte", category: "Commercial", sqm: 489.35, price: 30599055.5 },
+    { estate: "Pine Court", category: "Commercial", sqm: 935, price: 72930000 },
+    { estate: "Vine City", category: "Clinic", sqm: 384, price: 17521920 },
+    { estate: "Vine City", category: "Creche", sqm: 353, price: 16107390 },
+    { estate: "Vine City", category: "Mosque", sqm: 635, price: 28975050 },
+    { estate: "Vine City", category: "Church", sqm: 743, price: 33903090 },
+    { estate: "Vine City", category: "Plaza", sqm: 905, price: 41295150 },
+    { estate: "Prime Residence", category: "Commercial", sqm: 1773, price: 110635200 },
+    { estate: "Prime Residence", category: "School", sqm: 835, price: 52104000 },
+    { estate: "Prime Residence", category: "Clinic", sqm: 785, price: 48984000 },
+    { estate: "Prime Residence", category: "Mosque", sqm: 785.32, price: 49003968 },
+    { estate: "Prime Residence", category: "Church", sqm: 1154.4, price: 72034560 },
+    { estate: "Prime Residence", category: "Multipurpose", sqm: 3611.03, price: 225328272 },
+    { estate: "Harmony Hills", category: "Plaza", sqm: 942.688, price: 314103642 },
+    { estate: "Harmony Hills", category: "Club house", sqm: 773.699, price: 257796507 },
+    { estate: "Pearl", category: "Clinic", sqm: 599.592, price: 58480206.4 },
+    { estate: "Pearl", category: "Church", sqm: 776.078, price: 75693474.2 },
+    { estate: "Belle Vista", category: "Commercial", sqm: 677.118, price: 62667628.4 },
+    { estate: "Belle Vista", category: "Mosque", sqm: 1435.803, price: 132884326 },
+    { estate: "Belle Vista", category: "Church", sqm: 1505.576, price: 139341854 },
+    { estate: "Belle Vista", category: "School", sqm: 592.73, price: 54857474.5 },
+    { estate: "Beacon Ville", category: "Corner shop", sqm: 1508.79, price: 686439098 },
+    { estate: "Atlantic City", category: "School", sqm: 1033, price: 103764850 },
+    { estate: "Hutu Exclusive", category: "School", sqm: 6100, price: 550229760 },
+];
+function renderCommercialRows() {
+    return COMMERCIAL_SPACES.map(item => `
+        <tr class="border-b border-slate-700 hover:bg-slate-700/50 transition-colors">
+            <td class="p-4 text-slate-300 font-medium">${item.estate}</td>
+            <td class="p-4 text-slate-400">${item.category}</td>
+            <td class="p-4 text-slate-400 text-right font-mono">${item.sqm.toLocaleString()}</td>
+            <td class="p-4 text-green-400 text-right font-mono font-semibold">
+                ₦${item.price.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0})}
+            </td>
+        </tr>
+    `).join('');
+}
+
+
         // --- NEW: DYNAMIC CHART.JS CONTENT ---
         function getProjectsHTML() {
             return `
@@ -647,7 +688,34 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="bg-slate-800 rounded-2xl border border-slate-700 shadow-lg overflow-hidden mt-8">
+                <div class="p-6 border-b border-slate-700 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-white font-bold text-lg">Commercial Spaces (Estate Lands)</h3>
+                        <p class="text-slate-400 text-xs mt-1">Current pricing per square meter and total value</p>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-900/40 text-blue-400 text-xs rounded-full border border-blue-500/30">Live Data</span>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-slate-900/50 text-slate-400 uppercase text-xs">
+                            <tr>
+                                <th scope="col" class="p-4 font-semibold">Estate</th>
+                                <th scope="col" class="p-4 font-semibold">Category</th>
+                                <th scope="col" class="p-4 font-semibold text-right">SQM</th>
+                                <th scope="col" class="p-4 font-semibold text-right">Price (₦)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-700">
+                            ${renderCommercialRows()}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-slate-900/30 p-3 text-center text-xs text-slate-500 border-t border-slate-700">
+                    NB: All properties are selling at Outright Amounts
+                </div>
+            </div>
                     <div class="bg-blue-900/20 border border-blue-500/30 p-6 rounded-2xl mt-8">
                         <h4 class="text-blue-400 font-bold mb-2 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4"></i> Analyst Note</h4>
                         <ul class="list-disc list-inside text-slate-300 text-sm space-y-2 leading-relaxed">
