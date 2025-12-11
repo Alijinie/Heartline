@@ -491,6 +491,63 @@
             { duration: '12 Months', total: 6962500, initial: 20887500, percent: '30%', balance: 48737500, monthly: 8122917},
             
         ] },
+        { 
+        id: 40, 
+        title: '4 Bedroom Semi-Detached Duplex (Shell)', 
+        location: 'Hutu Abuja, Airport Road, Before Centenary City, Abuja', 
+        price: 12960000, // Displaying the Land Price as the starting price
+        type: 'Mshel Hutu Abuja', 
+        typeColor: 'bg-blue-900', // Matched to the flyer's dark blue branding
+        beds: 4, 
+        baths: 4, // Standard estimate for this type (not specified on flyer)
+        sqm: 300, // Standard estimate (not specified on flyer)
+        image: '24.png', // You will need to save the flyer image with this name
+        tag: 'FCDA APPROVED',
+        paymentPlans: [
+            // Plan A: Estate Land Payment Plans (Blue Table)
+            { 
+                duration: '2 Months (Land Only)', 
+                total: 12960000, 
+                initial: 6480000, 
+                percent: '50%', 
+                balance: 6480000, 
+                monthly: 3240000 
+            },
+            { 
+                duration: '6 Months (Land Only)', 
+                total: 14515200, 
+                initial: 4354560, 
+                percent: '30%', 
+                balance: 10160640, 
+                monthly: 1693440 
+            },
+            // Plan B: House Shell Payment Plans (Orange/Blue Table)
+            { 
+                duration: '8 Months (House Shell)', 
+                total: 78872500, 
+                initial: 23661750, 
+                percent: '30%', 
+                balance: 55210750, 
+                monthly: 6901343.75 
+            },
+            { 
+                duration: '12 Months (House Shell)', 
+                total: 88337200, 
+                initial: 26501160, 
+                percent: '30%', 
+                balance: 61836040, 
+                monthly: 5153003.33 
+            },
+            { 
+                duration: '16 Months (House Shell)', 
+                total: 98937744, 
+                initial: 29681323.20, 
+                percent: '30%', 
+                balance: 69256420.80, 
+                monthly: 4328526.30 
+            }
+        ] 
+    },
         ];
         function generateStructuredData() {
     // 1. Organization Schema
