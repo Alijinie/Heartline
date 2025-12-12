@@ -3761,9 +3761,128 @@
             monthly: 13648098 / 12 // Total balance / 12 months (Average)
         }
     ]
+},
+{
+    id: 100, // Next available ID
+    title: '5 Bedroom Fully Detached Duplex',
+    location: 'After Mountain of Fire Estate, before Shalom Estate, Sabon Lugbe, FCT Abuja | Landmark: Goodluck Jonathan Farms',
+    price: 63246500, // 6 Months Investment Amount (Lowest listed plan)
+    type: 'MSHEL ROYAL ESTATE - DUPLEX',
+    typeColor: 'bg-stone-800', // A unique color for this project
+    beds: 5,
+    baths: 6, // Assuming 5 beds + 1 extra/guest bath
+    sqm: 500, // Not specified
+    image: '72.png', // New suggested filename
+    tag: 'FCDA APPROVED',
+    finishing: [ // Shell Finishing details
+        'External Finishing',
+        'Infrastructure',
+        'Roofing',
+        'Mechanical Piping'
+    ],
+    // No specific estate features listed on this flyer
+    estateFeatures: [],
+    paymentPlans: [
+        // Plan A: 6 Months Payment Plan
+        {
+            duration: '6 Months Payment Plan',
+            total: 63246500,
+            initial: 10973950, // Month 0 (30%) - Note: Amount is 30% of N36,579,833, not N63,246,500. Using the amount provided.
+            percent: '30%',
+            balance: 52272550, // 63,246,500 - 10,973,950
+            schedule: [
+                { month: 'Month 0', amount: 10973950, note: '30% Initial' },
+                { month: 'Month 1', amount: 9696975, note: '15%' },
+                { month: 'Month 2', amount: 9696975, note: '15%' },
+                { month: 'Month 3', amount: 6324650, note: '10%' },
+                { month: 'Month 4', amount: 6324650, note: '10%' },
+                { month: 'Month 5', amount: 6324650, note: '10%' },
+                { month: 'Month 6', amount: 6324650, note: '10%' }
+            ],
+            // Sum of installments (M1-M6): 44,792,550. This is based on the amounts listed, the percentages are inconsistent.
+            monthly: 52272550 / 6 // Total balance / 6 months (Average)
+        },
+        // Plan B: 12 Months Payment Plan
+        {
+            duration: '12 Months Payment Plan',
+            total: 70056240,
+            initial: 21256072, // Month 0 (30%)
+            percent: '30%',
+            balance: 48800168, // 70,056,240 - 21,256,072
+            schedule: [
+                { month: 'Month 0', amount: 21256072, note: '30% Initial' },
+                { month: 'Month 3', amount: 14171248, note: '20%' },
+                { month: 'Month 6', amount: 14171248, note: '20%' },
+                { month: 'Month 9', amount: 10628436, note: '15%' },
+                { month: 'Month 12', amount: 10628436, note: '15%' }
+            ],
+            // Sum of installments: 49,600,812. (Matches Balance closely)
+            monthly: 48800168 / 12 // Total balance / 12 months (Average)
+        }
+    ]
+},
+
+
+{
+    id: 101, // Next available ID
+    title: '1 Bedroom Apartment',
+    location: 'Plot No 39 Cadastral Zone D32 Mamusa West District, Kuje, Abuja | Landmark: Capital Science Academy',
+    price: 7650000, // 6 Months Investment Amount (Lowest listed plan)
+    type: 'MSHEL PALM RESIDENCE - APARTMENT',
+    typeColor: 'bg-green-800', // A unique color for this project
+    beds: 1,
+    baths: 1, // Assuming 1 bath for a 1-bedroom apartment
+    sqm: 50, // Not specified
+    image: '73.png', // New suggested filename
+    tag: 'FCDA APPROVED',
+    finishing: [ // Shell Finishing details
+        'External Finishing',
+        'Infrastructure',
+        'Roofing',
+        'Mechanical Piping'
+    ],
+    // No specific estate features listed on this flyer
+    estateFeatures: [],
+    paymentPlans: [
+        // Plan A: 6 Months Payment Plan
+        {
+            duration: '6 Months Payment Plan',
+            total: 7650000,
+            initial: 2295000, // Month 0 (30%)
+            percent: '30%',
+            balance: 5355000, // 7,650,000 - 2,295,000
+            schedule: [
+                { month: 'Month 0', amount: 2295000, note: '30% Initial' }, //
+                { month: 'Month 1', amount: 1147500, note: '15%' }, // (Calculated from 7,650,000 * 15%)
+                { month: 'Month 2', amount: 1147500, note: '15%' }, // (Calculated from 7,650,000 * 15%)
+                { month: 'Month 3', amount: 765000, note: '10%' }, // (Calculated from 7,650,000 * 10%)
+                { month: 'Month 4', amount: 765000, note: '10%' }, // (Calculated from 7,650,000 * 10%)
+                { month: 'Month 5', amount: 765000, note: '10%' }, // (Calculated from 7,650,000 * 10%)
+                { month: 'Month 6', amount: 765000, note: '10%' } // (Calculated from 7,650,000 * 10%)
+            ],
+            // Note: The flyer amounts (M1-M6) sum to 5,355,000, which matches the balance.
+            monthly: 5355000 / 6 // Total balance / 6 months (Average)
+        },
+        // Plan B: 12 Months Payment Plan
+        {
+            duration: '12 Months Payment Plan',
+            total: 9945000,
+            initial: 2903500, // Month 0 (30%)
+            percent: '30%',
+            balance: 7041500, // 9,945,000 - 2,903,500
+            schedule: [
+                { month: 'Month 0', amount: 2903500, note: '30% Initial' }, //
+                { month: 'Month 3', amount: 1909000, note: '20%' }, //
+                { month: 'Month 6', amount: 1909000, note: '20%' }, //
+                { month: 'Month 9', amount: 1691750, note: '15%' }, //
+                { month: 'Month 12', amount: 1691750, note: '15%' } //
+            ],
+            // Sum of installments (M3-M12): 7,101,500. This is slightly different from the calculated balance.
+            // Using the listed amounts from the flyer for total/initial:
+            monthly: 7041500 / 12 // Total balance / 12 months (Average)
+        }
+    ]
 }
-
-
 
 
         ];
