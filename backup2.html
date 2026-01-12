@@ -223,8 +223,7 @@
 
     <script>
         // --- DATA ---
-        // --- UPDATED STATE ---
-const APP_STATE = { activeTab: 'home', locationFilter: 'All' };
+        const APP_STATE = { activeTab: 'home' };
 
         // Real Estate Listings
         const PROPERTIES = [
@@ -4295,78 +4294,30 @@ function renderCommercialRows() {
                 }
             });
         }
-function getFilterBarHTML() {
-    // We define the major locations based on your data
-    const locations = ['All', 'Abuja', 'Lagos', 'Yola'];
-    
-    const buttons = locations.map(loc => {
-        const isActive = APP_STATE.locationFilter === loc;
-        // Active gets purple, inactive gets slate
-        const classes = isActive 
-            ? 'bg-purple-600 text-white shadow-lg shadow-purple-900/20 ring-1 ring-purple-500' 
-            : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white border border-slate-700';
-            
-        return `<button onclick="applyLocationFilter('${loc}')" class="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-300 ${classes}">${loc}</button>`;
-    }).join('');
 
-    return `
-        <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4 px-4 md:px-0">
-            <h2 class="text-white font-bold text-lg flex items-center gap-2">
-                <i data-lucide="map" class="w-5 h-5 text-purple-500"></i>
-                <span id="listing-heading">Latest Listings</span>
-            </h2>
-            <div class="flex gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide">
-                ${buttons}
-            </div>
-        </div>
-    `;
-}
         function getListingsHTML() {
-    // 1. Filter the properties based on the current state
-    const filteredProps = PROPERTIES.filter(prop => {
-        if (APP_STATE.locationFilter === 'All') return true;
-        // Check if the property location string includes the selected filter (e.g., "Abuja")
-        return prop.location.toLowerCase().includes(APP_STATE.locationFilter.toLowerCase());
-    });
-
-    // 2. Handle case where no properties match
-    if (filteredProps.length === 0) {
-        return `
-            ${getFilterBarHTML()}
-            <div class="flex flex-col items-center justify-center py-20 text-slate-500 fade-in">
-                <i data-lucide="map-pin-off" class="w-12 h-12 mb-4 opacity-50"></i>
-                <p>No properties found in ${APP_STATE.locationFilter}.</p>
-                <button onclick="applyLocationFilter('All')" class="mt-4 text-purple-400 hover:text-purple-300 text-sm font-semibold">View All Locations</button>
-            </div>
-        `;
-    }
-
-    // 3. Render the grid
-    const listingsGrid = filteredProps.map(prop => `
-        <div onclick="openPropertyModal(${prop.id})" class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition duration-300 shadow-lg group cursor-pointer relative flex flex-col h-full fade-in hover:-translate-y-1">
-            <div class="relative h-52 w-full overflow-hidden">
-                <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out">
-                <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-[10px] font-bold text-white uppercase tracking-wider shadow-sm border border-slate-700">${prop.tag}</div>
-                <div class="absolute bottom-3 left-3 flex items-center gap-2">
-                        <span class="text-[10px] font-bold px-2 py-1 rounded-md text-white ${prop.typeColor} shadow-md">${prop.type}</span>
+            return `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">` + PROPERTIES.map(prop => `
+                <div onclick="openPropertyModal(${prop.id})" class="bg-slate-800 rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition duration-300 shadow-lg group cursor-pointer relative flex flex-col h-full fade-in hover:-translate-y-1">
+                    <div class="relative h-52 w-full overflow-hidden">
+                        <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out">
+                        <div class="absolute top-3 left-3 bg-slate-900/90 backdrop-blur px-2.5 py-1 rounded-lg text-[10px] font-bold text-white uppercase tracking-wider shadow-sm border border-slate-700">${prop.tag}</div>
+                        <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                             <span class="text-[10px] font-bold px-2 py-1 rounded-md text-white ${prop.typeColor} shadow-md">${prop.type}</span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1">
+                        <h3 class="text-white font-semibold text-lg truncate mb-1">${prop.title}</h3>
+                        <div class="flex items-center text-slate-400 text-sm mb-3">
+                            <i data-lucide="map-pin" class="w-3 h-3 mr-1.5 text-purple-500"></i>${prop.location}
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-3 border-t border-slate-700/50">
+                            <div class="text-white font-bold text-lg">${formatCurrency(prop.price)}<span class="text-xs text-slate-500 font-normal">${prop.period || ''}</span></div>
+                            <button class="bg-slate-700 text-white p-2 rounded-lg hover:bg-purple-600 transition"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="p-4 flex flex-col flex-1">
-                <h3 class="text-white font-semibold text-lg truncate mb-1">${prop.title}</h3>
-                <div class="flex items-center text-slate-400 text-sm mb-3">
-                    <i data-lucide="map-pin" class="w-3 h-3 mr-1.5 text-purple-500"></i><span class="truncate">${prop.location}</span>
-                </div>
-                <div class="flex justify-between items-center mt-auto pt-3 border-t border-slate-700/50">
-                    <div class="text-white font-bold text-lg">${formatCurrency(prop.price)}</div>
-                    <button class="bg-slate-700 text-white p-2 rounded-lg hover:bg-purple-600 transition"><i data-lucide="eye" class="w-4 h-4"></i></button>
-                </div>
-            </div>
-        </div>
-    `).join('');
-
-    // Return the Filter Bar + The Grid
-    return getFilterBarHTML() + `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">${listingsGrid}</div>`;
-}
+            `).join('') + `</div>`;
+        }
         
         function openPropertyModal(id) {
             const prop = PROPERTIES.find(p => p.id === id);
@@ -4549,12 +4500,7 @@ function getFilterBarHTML() {
                 `;
             }).join('');
         }
-function applyLocationFilter(location) {
-    APP_STATE.locationFilter = location; // Update state
-    const dynamicArea = document.getElementById('dynamic-content-area');
-    dynamicArea.innerHTML = getListingsHTML(); // Re-render with new filter
-    lucide.createIcons(); // Refresh icons
-}
+
         function switchTab(tabId) {
             APP_STATE.activeTab = tabId;
             const homeSections = document.getElementById('home-sections');
